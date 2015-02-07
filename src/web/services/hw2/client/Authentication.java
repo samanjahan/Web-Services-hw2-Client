@@ -13,22 +13,25 @@ import java.util.List;
  * @author syst3m
  */
 public class Authentication {
-   List <Person> list = new ArrayList<Person>(); 
-   Person person = new Person();
+  private List <Person> perosnList = new ArrayList<Person>(); 
+  
+   
    
    public Authentication(){
+        Person person = new Person();
+        Person person2 = new Person();
         person.setName("Alex");
         person.setPassword("1234567");
-        list.add(person);
-        person.setName("Saman");
-        person.setPassword("1234567");
-        list.add(person);
+        perosnList.add(person);
+        person2.setName("Saman");
+        person2.setPassword("1234567");
+        perosnList.add(person2);
    }
    
    public boolean checkPerson(String name, String pass){
        
-       for(int i = 0; i < list.size(); ++i){
-           if(list.get(i).getName().equals(name) && list.get(i).getPassword().equals(pass)){
+       for(int i = 0; i < perosnList.size(); ++i){
+           if(perosnList.get(i).getName().equals(name) && perosnList.get(i).getPassword().equals(pass)){
                return true;
            }
        }
